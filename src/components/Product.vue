@@ -1,22 +1,22 @@
 <template>
-  <div class="prod-item">
-    <a href="###" class="pet_topci_block">
+  <span class="prod-item">
+    <a href="###" class="item-href">
       <div class="prod-picture">
-        <img :src="picture" alt="">
+        <img :src="item.picture"  />
         <!-- image -->
       </div>
-
-      <div class="prod-descripe">
-        {{item.descripe}}
-        <!-- descripe -->
-      </div>
       <div class="prod-price">
-        {{price}}
+        <strong>¥&nbsp;{{item.price}}</strong>
         <!-- price -->
       </div>
+      <div class="prod-describe">
+        {{item.describe}}
+        <!-- describe -->
+      </div>
+
 
     </a>
-  </div>
+  </span>
 </template>
 
 <script>
@@ -36,7 +36,10 @@
     width: 200px;
     float: left;
     background-color: white;
-    border-radius: 5px
+    border-radius: 5px;
+    margin-left: 40px;
+    margin-top: 40px;
+    border:1px solid rgba(0, 0, 0, 0.1);
   }
 
   .item-href {
@@ -46,22 +49,30 @@
     text-decoration: none;
   }
 
-  .prod-descripe {
+  .prod-describe {
     float: left;
-    width: 200px;
+    width: 180px;
+    font-size: 15px;
     height: auto;
+    text-align: left;
+    margin-left: 10px;
+    color: black;
   }
 
   .prod-price {
-    width: 100px;
+    width: 190px;
     height: auto;
-    font-size: 20px;
+    font-size: 18px;
     font-family: 微软雅黑;
     color: red;
+    float: left;
+    text-align: left;
+    margin-left: 10px;
+
   }
 
   .prod-picture img {
     height: 200px;
-    width: 200px;
+    width: 190px;
   }
 </style>
