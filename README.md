@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # shopping-trolley
 
 > vue shopping trolley
@@ -19,3 +20,6 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# shopping-trolley
+>>>>>>> 794033aa1023025ee2344152fc5d836ae9087a48
