@@ -1,7 +1,6 @@
 <template>
   <div class="item-list">
     <product-item v-for="item in prodList" :key="item.id" :item="item"></product-item>
-    <span></span>
   </div>
 </template>
 
@@ -72,5 +71,10 @@
 
 <style>
   .item-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-left;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 </style>

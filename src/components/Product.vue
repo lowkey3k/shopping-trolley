@@ -1,6 +1,6 @@
 <template>
   <span class="prod-item">
-    <a href="###" class="item-href">
+    <a href="/detail" class="item-href">
       <div class="prod-picture">
         <img :src="item.picture"  />
         <!-- image -->
@@ -33,13 +33,12 @@
 
 <style>
   .prod-item {
-    width: 200px;
-    float: left;
+    width: 15%;
     background-color: white;
     border-radius: 5px;
-    margin-left: 40px;
-    margin-top: 40px;
-    border:1px solid rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    border:1px solid rgba(135, 135, 135, 0.1);
+
   }
 
   .item-href {

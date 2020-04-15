@@ -11,6 +11,11 @@ export default new Router({
       path: '/',
       name: 'ProductList',
       component: ProductList
-    }
+    },
+	{
+		path:'/detail',
+		name: 'ProductDetail',
+		component: ProductDetail
+	}
   ]
 })
