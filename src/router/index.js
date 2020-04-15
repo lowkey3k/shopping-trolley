@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import ProductList from '@/components/ProductList'
+import ProductDetailView from '@/views/ProductDetailView'
 
 Vue.use(Router)
 
@@ -14,8 +15,8 @@ export default new Router({
     },
 	{
 		path:'/detail',
-		name: 'ProductDetail',
-		component: ProductDetail
+		name: 'ProductDetailView',
+		component: ProductDetailView
 	}
   ]
 })

@@ -34,12 +34,7 @@ exports.cssLoaders = function (options) {
     const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
 
     if (loader) {
-      loaders.push({
-        loader: loader + '-loader',
-        options: Object.assign({}, loaderOptions, {
-          sourceMap: options.sourceMap
-        })
-      })
+      loaders.push()
     }
 
     // Extract CSS when that option is specified
@@ -73,10 +68,7 @@ exports.styleLoaders = function (options) {
 
   for (const extension in loaders) {
     const loader = loaders[extension]
-    output.push({
-      test: new RegExp('\\.' + extension + '$'),
-      use: loader
-    })
+    output.push()
   }
 
   return output

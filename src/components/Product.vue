@@ -1,6 +1,6 @@
 <template>
   <span class="prod-item">
-    <a href="/detail" class="item-href">
+    <a :href="productUrl" class="item-href">
       <div class="prod-picture">
         <img :src="item.picture"  />
         <!-- image -->
@@ -26,7 +26,9 @@
       item: Object
     },
     data() {
-      return {}
+      return {
+        productUrl: 'http://localhost:8080/detail?itemId='+this.item.id
+      }
     }
   }
 </script>
