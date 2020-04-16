@@ -1,8 +1,11 @@
 <template>
   <span class="prod-item">
-    <a href="#" class="item-href">
+    <div>
+      <button @click="shoppingTrollery">购物车</button>
+    </div>
+    <div href="#" class="item-href">
       <div class="prod-picture">
-        <img :src="itemDetail.picture" />
+        <img :src="itemDetail.picture"/>
         <!-- image -->
       </div>
 
@@ -19,11 +22,12 @@
         <button @click="buy" class="buy-btn">购买</button>
 
       </div>
-    </a>
+    </div>
   </span>
 </template>
 <script>
   const TROLLERYIDS = "trolleryIds";
+  //缓存  页面图片加载不到
   let id = decodeURIComponent((new RegExp('[?|&]' + 'itemId' + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[
     1].replace(/\+/g, '%20')) || null
   let itemsStr = localStorage.getItem("items");
@@ -45,20 +49,37 @@
     },
     methods: {
       push() {
-        //存储购物车内的商品id，存储在数组内，第一个存储时定义一个新的数组
-        let tros = [];
-        var oldTrollery = JSON.parse(localStorage.getItem(TROLLERYIDS));
-        if (oldTrollery != null) {
-          oldTrollery.push(id);
-          //存储是要去重，es6 Set集合去重
-          localStorage.setItem(TROLLERYIDS, JSON.stringify(Array.from(new Set(oldTrollery))))
+        //存储购物车内的商品id，存储为字符串，用'，'隔开
+        let oldTrolley = localStorage.getItem(TROLLERYIDS);
+        if (oldTrolley === null) {
+          oldTrolley = id;
         } else {
-          tros.push(id);
-          localStorage.setItem(TROLLERYIDS, JSON.stringify(tros))
+          alert(id)
+          if (oldTrolley.indexOf(id)===-1) {
+            oldTrolley = oldTrolley + "," + id;
+          }
         }
+        localStorage.setItem(TROLLERYIDS, oldTrolley);
+
+        // let tros = [];
+        // var oldTrollery = JSON.parse(localStorage.getItem(TROLLERYIDS));
+        // if (oldTrollery != null) {
+        //   oldTrollery.push(id);
+        //   //存储是要去重，es6 Set集合去重
+        //   localStorage.setItem(TROLLERYIDS, JSON.stringify(Array.from(new Set(oldTrollery))))
+        // } else {
+        //   tros.push(id);
+        //   localStorage.setItem(TROLLERYIDS, JSON.stringify(tros))
+        // }
       },
       buy() {
         alert("购买成功，前去支付")
+      },
+      shoppingTrollery() {
+        this.$router.push({
+          path: "/trolley",
+          query: ""
+        })
       }
     }
 

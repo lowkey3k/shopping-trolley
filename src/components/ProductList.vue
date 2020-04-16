@@ -8,75 +8,91 @@
   import Product from './Product'
   import image01 from '../assets/notify.jpg'
   //定义商品信息
-  const prodList= [
+  const prodList = [
     {
       id: 1,
       picture: image01,
+      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
       price: 12,
       describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
     },
     {
       id: 2,
       picture: image01,
+      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
       price: 12,
       describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
-    },{
+    }, {
       id: 3,
       picture: image01,
+      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
+
       price: 12,
       describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
-    },{
+    }, {
       id: 4,
       picture: image01,
+      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
+
       price: 12,
       describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
-    },{
+    }, {
       id: 5,
       picture: image01,
+      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
+
       price: 12,
       describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
-    },{
+    }, {
       id: 6,
       picture: image01,
+      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
+
       price: 12,
       describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
-    },{
+    }, {
       id: 7,
       picture: image01,
+      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
+
       price: 12,
       describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
-    },{
+    }, {
       id: 8,
       picture: image01,
+      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
+
       price: 12,
       describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
-    },{
+    }, {
       id: 9,
       picture: image01,
+      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
+
       price: 12,
       describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
     }
   ]
 
-  export  default  {
+  export default {
     name: 'product-list',
     components: {
       "product-item": Product
     },
-    data () {
+    data() {
       return {
         products: prodList
       }
     },
     created() {
-      localStorage.setItem("items",JSON.stringify(prodList));
+      localStorage.setItem("items", JSON.stringify(prodList));
     }
   };
 
 </script>
 
 <style>
-  .item-list{
+  .item-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-left;
