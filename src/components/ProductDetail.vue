@@ -2,7 +2,7 @@
   <span class="prod-item">
     <a href="#" class="item-href">
       <div class="prod-picture">
-        <img :src="itemDetail.picture"/>
+        <img :src="itemDetail.picture" />
         <!-- image -->
       </div>
 
@@ -23,9 +23,9 @@
   </span>
 </template>
 <script>
-
   const TROLLERYIDS = "trolleryIds";
-  let id = decodeURIComponent((new RegExp('[?|&]' + 'itemId' + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1].replace(/\+/g, '%20')) || null
+  let id = decodeURIComponent((new RegExp('[?|&]' + 'itemId' + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[
+    1].replace(/\+/g, '%20')) || null
   let itemsStr = localStorage.getItem("items");
   let item = JSON.parse(itemsStr)[id];
 
@@ -37,39 +37,42 @@
       return {
         itemDetail: item
       }
-    }
-    , created() {
+    },
+    created() {
       //下面这种只能在这里获取到id
       // let id = this.$route.query.itemId;
 
-    }, methods: {
+    },
+    methods: {
       push() {
         //存储购物车内的商品id，存储在数组内，第一个存储时定义一个新的数组
         let tros = [];
-        let oldTrollery = JSON.parse(localStorage.getItem("trolleryIds"));
-        if (oldTrollery != null && !oldTrollery.contains(id)) {
+        var oldTrollery = JSON.parse(localStorage.getItem(TROLLERYIDS));
+        if (oldTrollery != null) {
           oldTrollery.push(id);
-          localStorage.setItem(TROLLERYIDS, JSON.stringify(oldTrollery))
+          //存储是要去重，es6 Set集合去重
+          localStorage.setItem(TROLLERYIDS, JSON.stringify(Array.from(new Set(oldTrollery))))
         } else {
           tros.push(id);
           localStorage.setItem(TROLLERYIDS, JSON.stringify(tros))
         }
-      },buy(){
+      },
+      buy() {
         alert("购买成功，前去支付")
       }
     }
 
   }
 
-
 </script>
 
-<style>
-  .push-btn  {
+<style scoped>
+  .push-btn {
     width: 100px;
     height: 30px;
   }
-  .buy-btn{
+
+  .buy-btn {
     width: 100px;
     height: 30px;
   }

@@ -1,6 +1,6 @@
 <template>
   <span class="prod-item">
-    <a :href="productUrl" class="item-href">
+    <div @click="handlerToDetail" class="item-href">
       <div class="prod-picture">
         <img :src="item.picture"  />
         <!-- image -->
@@ -15,7 +15,7 @@
       </div>
 
 
-    </a>
+    </div>
   </span>
 </template>
 
@@ -27,13 +27,23 @@
     },
     data() {
       return {
-        productUrl: 'http://localhost:8080/detail?itemId='+this.item.id
+
+      }
+    },
+    methods:{
+      handlerToDetail(){
+        this.$router.push({
+          path:"/detail",
+          query:{
+            itemId: this.item.id
+          }
+        })
       }
     }
   }
 </script>
 
-<style>
+<style scoped>
   .prod-item {
     width: 15%;
     background-color: white;
