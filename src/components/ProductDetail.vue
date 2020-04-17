@@ -76,8 +76,10 @@
           let oldTrolleryObj = JSON.parse(oldTrolley);
           if (!isContainsTrolley(oldTrolleryObj, this.itemDetail.id)) {
             oldTrolleryObj.push(trolleyInfo);
+            localStorage.setItem(TROLLERYIDS, JSON.stringify(oldTrolleryObj));
+          }else{
+            alert("已加入购物车，无需重复添加");
           }
-          localStorage.setItem(TROLLERYIDS, JSON.stringify(oldTrolleryObj));
         }
       },
       buy() {
