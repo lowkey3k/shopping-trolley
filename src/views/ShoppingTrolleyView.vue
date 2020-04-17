@@ -1,46 +1,70 @@
 <template>
- <div>
-
-   <shopping-trollery v-for="orderInfo in orderInfoList" :key="orderInfo.id" :orderInfo="orderInfo"></shopping-trollery>
-
- </div>
+  <div class="order-view">
+    <shopping-trolley v-for="orderInfo in orderInfoList" :key="orderInfo.id" :orderInfo="orderInfo">
+    </shopping-trolley>
+  </div>
 
 </template>
 
 <script>
-  const TROLLERYIDS = "trolleryIds";
-  let orderIds = localStorage.getItem(TROLLERYIDS);
-  let itemsStr=localStorage.getItem("items");
-
-  let itemsObj = JSON.parse(itemsStr);
-  let orderInfos=[];
-  let i;
-  for (i=0;i<orderIds.length;i++){
-    let id=orderIds[i];
-
-    for (let j=0;j<itemsObj.length;j++){
-      if (itemsObj[j].id===id){
-        itemsObj[j]["num"]=1;
-        itemsObj[j]["totalPrice"]=100;
-        orderInfos.push(itemsObj[j]);
+  import ShoppingTrolley from "@/components/ShoppingTrolley"
+  export default {
+    name: "ShoppingTrolleyView",
+    data() {
+      return {
+        orderInfoList: [{
+          id: 1
+        }]
+      }
+    },
+    components: {
+      "shopping-trolley": ShoppingTrolley
+    },
+    created() {
+      this.handleData()
+    },
+    methods: {
+      handleData() {
+        const TROLLERYIDS = "trolleryIds";
+        let itemsStr = localStorage.getItem("items");
+        let itemObjArr = JSON.parse(itemsStr);
+        //购物车容器
+        let trolleyInfoList = [];
+        //获取购物车内容，存储的内容是商品id和商品数量，类型为json数组
+        let trolleyInfos = localStorage.getItem(TROLLERYIDS);
+        let trolleyInfoArrObj = JSON.parse(trolleyInfos);
+        var i;
+        var j;
+        for (i = 0; i < trolleyInfoArrObj.length; i++) {
+          for (j = 0; j < itemObjArr.length; j++) {
+            if (trolleyInfoArrObj[i].id === itemObjArr[j].id) {
+              let info = {
+                id: trolleyInfoArrObj[i].id,
+                picture: itemObjArr[j].picture,
+                num: trolleyInfoArrObj[i].num,
+                describe: itemObjArr[j].describe,
+                params: itemObjArr[j].params,
+                price: itemObjArr[j].price,
+                totalPrice: itemObjArr[j].price * trolleyInfoArrObj[i].num
+              }
+              trolleyInfoList.push(info);
+            }
+          }
+        }
+        console.log(trolleyInfoList)
+        this.orderInfoList = trolleyInfoList
       }
     }
   }
-
-  import ShoppingTrolley from "@/components/ShoppingTrolley"
-    export default {
-        name: "ShoppingTrollery",
-        data(){
-          return {
-            orderInfoList: orderInfos
-          }
-        },
-      components:{
-          "shopping-trolley": ShoppingTrolley
-      }
-    }
 </script>
 
 <style scoped>
-
+  .order-view {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    /* margin-left: 30px; */
+    /* margin-right: 30px; */
+    
+  }
 </style>

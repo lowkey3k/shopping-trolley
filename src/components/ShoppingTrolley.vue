@@ -42,5 +42,22 @@
 </script>
 
 <style scoped>
-
+  .order-content{
+    
+  }
+  .order-describe{
+    
+  }
+  .order-num{
+    
+  }
+  .order-picture{
+    
+  }
+  .order-params{
+    
+  }
+  .order-total-price{
+    
+  }
 </style>
