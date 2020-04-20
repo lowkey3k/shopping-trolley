@@ -29,17 +29,6 @@
   const TROLLERYIDS = "trolleryIds";
   let id;
   let item;
-  //判断购物车里是否已经加入
-  function isContainsTrolley(trolleyObj, itemId) {
-    var i;
-    for (i=0;i<trolleyObj.length;i++) {
-      let obj=trolleyObj[i];
-      if(obj.id === itemId){
-        return true;
-      }
-    }
-  }
-
 
   export default {
     name: "ProductDetail",
@@ -53,12 +42,15 @@
       // let id = this.$route.query.itemId;
       //缓存  页面图片加载不到
       let id = decodeURIComponent((new RegExp('[?|&]' + 'itemId' + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [,
-        ""
-      ])[
-        1].replace(/\+/g, '%20')) || null
+        ""])[1].replace(/\+/g, '%20')) || null
       let itemsStr = localStorage.getItem("items");
-      this.itemDetail = JSON.parse(itemsStr)[id];
-
+      let obj = JSON.parse(itemsStr);
+      let i=0;
+      for(i;i<obj.length;i++){
+        if(obj[i].id==id){
+          this.itemDetail=obj[i];
+        }
+      }
     },
     methods: {
       push() {
@@ -74,10 +66,10 @@
           localStorage.setItem(TROLLERYIDS, JSON.stringify(trolleyInfoArr));
         } else {
           let oldTrolleryObj = JSON.parse(oldTrolley);
-          if (!isContainsTrolley(oldTrolleryObj, this.itemDetail.id)) {
+          if (!this.isContainsTrolley(oldTrolleryObj, this.itemDetail.id)) {
             oldTrolleryObj.push(trolleyInfo);
             localStorage.setItem(TROLLERYIDS, JSON.stringify(oldTrolleryObj));
-          }else{
+          } else {
             alert("已加入购物车，无需重复添加");
           }
         }
@@ -90,6 +82,16 @@
           path: "/trolley",
           query: ""
         })
+      },
+      //判断购物车里是否已经加入
+      isContainsTrolley(trolleyObj, itemId) {
+        var i;
+        for (i = 0; i < trolleyObj.length; i++) {
+          let obj = trolleyObj[i];
+          if (obj.id === itemId) {
+            return true;
+          }
+        }
       }
     }
 

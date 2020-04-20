@@ -12,65 +12,65 @@
     {
       id: 1,
       picture: image01,
-      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
+      params: "1,颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
       price: 12,
-      describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
+      describe: 'HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
     },
     {
       id: 2,
       picture: image01,
-      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
+      params: "2,颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
       price: 12,
-      describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
+      describe: 'HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
     }, {
       id: 3,
       picture: image01,
-      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
+      params: "3,颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
 
       price: 12,
-      describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
+      describe: 'HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
     }, {
       id: 4,
       picture: image01,
-      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
+      params: "4,颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
 
       price: 12,
-      describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
+      describe: 'HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
     }, {
       id: 5,
       picture: image01,
-      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
+      params: "5,颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
 
       price: 12,
-      describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
+      describe: 'HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
     }, {
       id: 6,
       picture: image01,
-      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
+      params: "6,颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
 
       price: 12,
-      describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
+      describe: 'HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
     }, {
       id: 7,
       picture: image01,
-      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
+      params: "7,颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
 
       price: 12,
-      describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
+      describe: 'HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
     }, {
       id: 8,
       picture: image01,
-      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
+      params: "8,颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
 
       price: 12,
-      describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
+      describe: 'HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
     }, {
       id: 9,
       picture: image01,
-      params: "颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
+      params: "9,颜色：岩石黑；内存：8+128；前置摄像：2000W像素；后置：1亿像素",
 
       price: 12,
-      describe: '        HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
+      describe: 'HuaWei mate 30 Pro 充電兩分鐘通話兩個月'
     }
   ]
 

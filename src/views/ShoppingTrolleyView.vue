@@ -12,9 +12,7 @@
     name: "ShoppingTrolleyView",
     data() {
       return {
-        orderInfoList: [{
-          id: 1
-        }]
+        orderInfoList: []
       }
     },
     components: {
@@ -61,10 +59,17 @@
 <style scoped>
   .order-view {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-between;
     /* margin-left: 30px; */
     /* margin-right: 30px; */
-    
+    justify-content: center;
   }
+
+
+  body{
+    background-color: #e8e8e8;
+  }
+
+
 </style>

@@ -20,4 +20,9 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+ body{
+    background-color: #f3f3f3;
+  }
+
 </style>
