@@ -23,9 +23,9 @@
       </div>
       <!--加减功能  文本框数量-->
       <div class="sum_cont">
-        <div class="minute" @click="btn_minute(index)"><strong>-</strong></div>
-        <input class="input" v-model="orderInfo.num" />
-        <div class="add" @click="btn_add(index)"><strong>+</strong></div>
+        <div class="minute" @click="btn_minute(orderInfo.id)"><strong>-</strong></div>
+        <input class="input" v-model="num" />
+        <div class="add" @click="btn_add(orderInfo.id)"><strong>+</strong></div>
       </div>
     </div>
   <!-- </span> -->
@@ -38,13 +38,24 @@
       orderInfo: Object
     },
     data() {
-      return {}
+      return {
+        num: 0
+      }
+    },
+    created () {
+      this.num = this.orderInfo.num;
     },
     methods: {
-      btn_minute(index) {
-
+      btn_minute(id) {
+        this.num-=1;
+        if (this.num===0){
+          this.num=1;
+        }
+        this.$emit("calTotalPrice",id,this.num)
       },
-      btn_add(index) {
+      btn_add(id) {
+        this.num+=1;
+        this.$emit("calTotalPrice",id,this.num)
 
       }
     }
@@ -160,6 +171,7 @@
     display: inline-block;
     text-align: center;
     border-radius: 5px;
+    cursor:pointer;
   }
 
   /*加号*/
@@ -174,6 +186,7 @@
     display: inline-block;
     text-align: center;
     border-radius: 5px;
+    cursor:pointer;
   }
 
   /*文本框*/

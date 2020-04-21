@@ -39,15 +39,15 @@
     },
     created() {
       //下面这种只能在这里获取到id
-      // let id = this.$route.query.itemId;
+      let id = parseFloat(this.$route.query.itemId);
       //缓存  页面图片加载不到
-      let id = decodeURIComponent((new RegExp('[?|&]' + 'itemId' + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [,
-        ""])[1].replace(/\+/g, '%20')) || null
+      // let id = decodeURIComponent((new RegExp('[?|&]' + 'itemId' + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [,
+      //   ""])[1].replace(/\+/g, '%20')) || null;
       let itemsStr = localStorage.getItem("items");
       let obj = JSON.parse(itemsStr);
       let i=0;
       for(i;i<obj.length;i++){
-        if(obj[i].id==id){
+        if(obj[i].id===id){
           this.itemDetail=obj[i];
         }
       }

@@ -49,8 +49,10 @@
             }
           }
         }
-        console.log(trolleyInfoList)
         this.orderInfoList = trolleyInfoList
+      }
+      ,calTotalPrice(){
+
       }
     }
   }
